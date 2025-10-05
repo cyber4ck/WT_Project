@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chaitanya | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa; /* light bg */
+      margin: 0; padding: 0;
+      color: #222;
+    }
+    .container { max-width: 900px; margin: auto; padding: 30px; }
+
+    /* Photo + Info */
+    .photo-wrap {
+      width: 160px; height: 160px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #ccc;
+      box-shadow: 0 8px 18px rgba(0,0,0,.15);
+    }
+    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .name { 
+      font-size: 28px; font-weight: 800; 
+      text-align: center; display:flex; justify-content:center; 
+      align-items:center; gap:8px; 
+    }
+    .name a img { 
+      width:28px; height:28px; 
+      transition: transform 0.2s ease; 
+    }
+    .name a img:hover { transform: scale(1.2); }
+    .subtitle { text-align: center; margin-bottom: 10px; color: #555; }
+
+    /* About paragraph */
+    .about {
+      background:#fff;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,.1);
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Tiles */
+    .tiles {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 30px;
+    }
+    .tile {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 18px; border-radius: 16px;
+      cursor: pointer; text-align: center;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      font-weight: bold;
+    }
+    .tile:hover {
+      transform: scale(1.05);
+      background: #f0f0f0;
+    }
+
+    /* Skills */
+    h2 { margin: 20px 0 10px; }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .skill-card {
+      padding: 18px;
+      border-radius: 14px;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 6px 14px rgba(0,0,0,.2);
+      transition: transform .3s, box-shadow .3s;
+      font-size: 15px;
+      position: relative;
+    }
+    .skill-card:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    }
+    .skill-card span {
+      display:block;
+      font-size:22px;
+      margin-bottom:6px;
+    }
+    .c { background: #3498db; }
+    .cpp { background: #9b59b6; }
+    .html { background: #e67e22; }
+    .css { background: #2980b9; }
+    .js { background: #f1c40f; color:#222; }
+    .nocode { background: #2ecc71; }
+    .ai { background: #ff4757; }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .project {
+      background: #fff;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      transition: transform 0.3s;
+    }
+    .project:hover { transform: translateY(-6px); }
+    .project a {
+      color: #0077b5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Footer (LinkedIn) */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0077b5;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,.15);
+      transition: transform 0.2s ease;
+    }
+    .linkedin:hover { transform: scale(1.05); background:#005582; }
+    .linkedin img {
+      width: 20px; height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Photo + Info -->
+    <div class="photo-wrap">
+      <img src="me.jpg" alt="Chaitanya">
+    </div>
+    <div class="name">
+      Chaitanya
+      <a href="https://www.linkedin.com/in/chaitanya-kulkarni-08a76a338" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
+    </div>
+    <div class="subtitle">Coder • Hacker • Student</div>
+
+    <!-- About -->
+    <div class="about">
+      I love solving problems with code. I enjoy building websites, creating projects in C & C++, and experimenting with new ideas using AI.  
+      For me, coding is not just about syntax – it’s about creating something useful and fun that others can interact with. 🚀
+    </div>
+
+    <!-- Tiles -->
+    <div class="tiles">
+      <div class="tile" onclick="goPage('coder')">👨‍💻 Coder</div>
+      <div class="tile" onclick="goPage('hacker')">🛡️ Hacker</div>
+    </div>
+
+    <!-- Skills -->
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-card c"><span>📘</span>C</div>
+      <div class="skill-card cpp"><span>🟣</span>C++</div>
+      <div class="skill-card html"><span>🌐</span>HTML</div>
+      <div class="skill-card css"><span>🎨</span>CSS</div>
+      <div class="skill-card js"><span>⚡</span>JavaScript</div>
+      <div class="skill-card nocode"><span>🔧</span>No-Code</div>
+      <div class="skill-card ai"><span>🤖</span>AI</div>
+    </div>
+
+    <!-- Projects -->
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Premacha Chaha Website</h3>
+        <p>Built with HTML, CSS, JS.</p>
+        <a href="https://chahapremacha.infinityfree.me">🔗 Project Link</a>
+      </div>
+      <div class="project">
+        <h3>Mukundraj Graphic Website</h3>
+        <p>No-code project.</p>
+        <a href="https://readable-star-170918.framer.app">🔗 Project Link</a>
+      </div>
+      <div class="project">
+        <h3>Hotel Management System</h3>
+        <p>Made in C language.</p>
+      </div>
+      <div class="project">
+        <h3>More Coming...</h3>
+        <p>AI-powered experiments & ideas.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <a class="linkedin" href="https://www.linkedin.com/in/chaitanya-kulkarni-08a76a338" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        Connect on LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function goPage(page){
+      alert("Going to " + page + " page!");
+      
+    }
+  </script>
+</body>
+</html>

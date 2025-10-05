@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chaitanaya — Portfolio</title>
+  <style>
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #eee;
+  text-align: center;
+  transition: background 0.4s;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+
+.options {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.card {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.coder .badge {
+  background: #0ea5ff22;
+  color: #0ea5ff;
+}
+
+.hacker .badge {
+  background: #00e29a22;
+  color: #00e29a;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 6px;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  margin: 0 8px;
+  color: #bbb;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  color: #fff;
+}
+
+body.theme-coder {
+  background: linear-gradient(135deg, #002244, #0055aa);
+}
+
+body.theme-hacker {
+  background: linear-gradient(135deg, #002b15, #00cc66);
+}
+
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <img src="me.jpg" alt="Chaitanaya">
+    <h1>Chaitanaya</h1>
+    <p>Coder • Hacker — exploring code & security</p>
+
+    <div class="options">
+      <div class="card coder" id="coderCard">
+        <div class="badge">Coder</div>
+        <div class="title">Software & Algorithms</div>
+        <div class="desc">I build efficient C/C++ programs, solve problems, and write clean code.</div>
+      </div>
+      <div class="card hacker" id="hackerCard">
+        <div class="badge">Hacker</div>
+        <div class="title">Security & Exploration</div>
+        <div class="desc">I explore systems, practice CTFs, and study network security.</div>
+      </div>
+    </div>
+
+    <div class="socials">
+      <a id="instaLink" href="#"><i class="fab fa-instagram"></i></a>
+      <a id="lnkLink" href="#"><i class="fab fa-linkedin"></i></a>
+      <a id="mailLink" href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <script>
+    const body = document.body;
+    const coder = document.getElementById("coderCard");
+    const hacker = document.getElementById("hackerCard");
+
+    
+    coder.onmouseenter = () => body.className = "theme-coder";
+    coder.onmouseleave = () => body.className = "";
+    hacker.onmouseenter = () => body.className = "theme-hacker";
+    hacker.onmouseleave = () => body.className = "";
+
+
+    coder.onclick = () => location.href = "coder.html";
+    hacker.onclick = () => location.href = "hacker.html";
+
+  
+    document.getElementById("instaLink").href = "https://instagram.com/yourusername";
+    document.getElementById("lnkLink").href   = "https://linkedin.com/in/yourusername";
+    document.getElementById("mailLink").href  = "mailto:yourmail@gmail.com";
+  </script>
+</body>
+</html>
